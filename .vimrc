@@ -288,9 +288,6 @@ vnoremap <Leader>y :%y<CR>
 nnoremap <Leader>o O<ESC>
 vnoremap <Leader>o O<ESC>
 
-" 現在のバッファ内容をコピー
-nnoremap <Leader>y :%y<CR>
-vnoremap <Leader>y :%y<CR>
 "
 " kensaku kensuu count
 nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
