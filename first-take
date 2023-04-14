@@ -1,0 +1,24 @@
+# brew のインストール
+# https://zenn.dev/watakarinto/articles/16451707aa08d1
+# https://brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ユーザー名/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# fish のインストール
+brew install fish
+which fish
+
+# shells に追加
+sudo vi /etc/shells
+
+# デフォルトシェルに変更
+which fish |xargs chsh -s
+
+# fisher のインストール
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+
+# pure を入れる
+fisher install rafaelrinaldi/pure
+
+# 参考：https://medium.com/@kjmczk/mac-terminal-53a3d4ac06c7
