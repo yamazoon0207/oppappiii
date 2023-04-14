@@ -22,3 +22,53 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 fisher install rafaelrinaldi/pure
 
 # 参考：https://medium.com/@kjmczk/mac-terminal-53a3d4ac06c7
+
+
+
+
+# dein のインストール
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
+
+# ~/.vimrc が上書きされるので、内容を控える
+# イメージ
+
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+" Set Dein base path (required)
+let s:dein_base = '/Users/star-yamamoto-373150/.cache/dein'
+
+" Set Dein source path (required)
+let s:dein_src = '/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" Call Dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+
+" Your plugins go here:
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+
+" Finish Dein initialization (required)
+call dein#end()
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+if has('filetype')
+  filetype indent plugin on
+endif
+
+" Enable syntax highlighting
+if has('syntax')
+  syntax on
+endif
+
+" Uncomment if you want to install not-installed plugins on startup.
+"if dein#check_install()
+" call dein#install()
+"endif
+
+
