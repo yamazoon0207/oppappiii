@@ -25,8 +25,6 @@ call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimfiler.vim')
 " カラースキーム
 call dein#add('cocopon/iceberg.vim')
-" Markdown プレビュー
-call dein#add('kannokanno/previm')
 " cs"' で " の囲みを ' に変える (Change Surround)
 call dein#add('terryma/vim-expand-region')
 " ビジュアルモードで + を押すと範囲拡大。_ を押すと縮小。
@@ -59,7 +57,6 @@ let g:mapleader = "\<Space>"
 " ファイラーを開く
 nnoremap <Leader>i :VimFilerBufferDir<CR>
 vnoremap <Leader>i :VimFilerBufferDir<CR>
-
 
 " 不要なデフォルトプラグインの無効化
 let g:loaded_gzip              = 1
@@ -201,7 +198,7 @@ nnoremap <silent> [v :previous<CR>
 nnoremap <silent> ]v :next<CR>
 nnoremap <silent> [V :first<CR>
 nnoremap <silent> ]V :last<CR>
-nnoremap <Leader>v :args 
+" nnoremap <Leader>v :args 
 
 " marks
 nnoremap <Leader>m :marks<CR>
