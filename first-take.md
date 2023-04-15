@@ -175,7 +175,9 @@ vim のバージョンが最新になりました。
 通っていました。  
 <img width="744" alt="スクリーンショット 2023-04-16 2 31 39" src="https://user-images.githubusercontent.com/44886160/232243899-f635f3e9-7498-4ad0-b07d-611528eec472.png">
 
-バージョンを確認しておきます。  
+node, npm のパスとバージョンを確認しておきます。  
+<img width="338" alt="スクリーンショット 2023-04-16 2 51 36" src="https://user-images.githubusercontent.com/44886160/232245378-a31885c4-b7cc-4ee2-9881-7ac09ce656a1.png">
+
 <img width="386" alt="image" src="https://user-images.githubusercontent.com/44886160/232244087-b14ef5da-707d-4249-ab21-3c64fd7c4408.png">
 
 ### Copilot.vim のインストール
