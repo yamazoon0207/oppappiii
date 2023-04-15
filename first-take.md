@@ -228,9 +228,9 @@ WEBブラウザが開き、 Github との連携を認証する画面が出ます
 :Copilot status
 ```
 
-利用可能なようです。
-<img width="482" alt="スクリーンショット 2023-04-16 4 02 37" src="https://user-images.githubusercontent.com/44886160/232248691-d8d0f4ac-9712-4a78-b3f7-ad4e0104c1ff.png">
+利用可能なようです。  
 
+<img width="482" alt="スクリーンショット 2023-04-16 4 02 37" src="https://user-images.githubusercontent.com/44886160/232248691-d8d0f4ac-9712-4a78-b3f7-ad4e0104c1ff.png">
 
 ![gif](https://user-images.githubusercontent.com/44886160/232249270-78e598c5-5f07-47db-868b-07e03d44b49c.gif)
 
