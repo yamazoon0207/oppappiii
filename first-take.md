@@ -93,3 +93,5 @@ endif
 ```
 
 
+# Clipy のインストール
+https://clipy-app.com/
