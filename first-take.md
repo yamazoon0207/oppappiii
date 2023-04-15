@@ -36,6 +36,16 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 fisher install rafaelrinaldi/pure
 ```
 
+### brew のパスを通す
+~/.config/fish/config.fish に fish_add_path /opt/homebrew/bin を追記します。
+
+```fish:~/.config/fish/config.fish
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+fish_add_path /opt/homebrew/bin
+```
+
 ## 3. dein のインストール
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
@@ -88,6 +98,79 @@ endif
 
 ## 4. Clipy のインストール
 https://clipy-app.com/
+
+## 5. Copilot.vim のインストール
+リポジトリ：
+https://github.com/github/copilot.vim
+
+Readme より 引用：
+1.  Install [Neovim](https://github.com/neovim/neovim/releases/tag/stable) or the latest patch of [Vim](https://github.com/vim/vim) (9.0.0185 or newer).
+
+2.  Install [Node.js](https://nodejs.org/en/download).
+
+3.  Install `github/copilot.vim` using vim-plug, packer.nvim, or any other
+    plugin manager.  Or to install manually, run one of the following
+    commands:
+
+    * Vim, Linux/macOS:
+
+          git clone https://github.com/github/copilot.vim.git \
+            ~/.vim/pack/github/start/copilot.vim
+
+    * Neovim, Linux/macOS:
+
+          git clone https://github.com/github/copilot.vim.git \
+            ~/.config/nvim/pack/github/start/copilot.vim
+
+    * Vim, Windows (PowerShell command):
+
+          git clone https://github.com/github/copilot.vim.git `
+            $HOME/vimfiles/pack/github/start/copilot.vim
+
+    * Neovim, Windows (PowerShell command):
+
+          git clone https://github.com/github/copilot.vim.git `
+            $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
+
+### vim のアップデート
+まずは vim をアップデートします。
+Mac の場合は brew です。
+
+```
+brew install vim
+```
+
+参考：
+https://github.com/vim/vim/blob/master/READMEdir/README_mac.txt
+
+以下の場所に vim が入りました。
+```
+/opt/homebrew/Cellar/vim/9.0.1450/bin/vim
+```
+<img width="1256" alt="スクリーンショット 2023-04-16 1 58 23" src="https://user-images.githubusercontent.com/44886160/232239654-bcf51d20-fc46-45d1-bc5b-e278e87a6cbc.png">
+
+
+
+
+パスを通します。
+~/.config/fish/config.fish に fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin を追加します。
+
+```fish:~/.config/fish/config.fish
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin
+```
+
+vim のバージョンが変わりました。
+<img width="948" alt="スクリーンショット 2023-04-16 2 21 44" src="https://user-images.githubusercontent.com/44886160/232242371-be46407a-e382-4bbc-866a-78dc210bf96f.png">
+
+<img width="928" alt="スクリーンショット 2023-04-16 2 22 10" src="https://user-images.githubusercontent.com/44886160/232242387-b8835bb0-8d5a-46fa-b425-227e7348bb31.png">
+
+
+
+##
 
 
 # 備忘
