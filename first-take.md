@@ -88,7 +88,22 @@ endif
 ## 本リポジトリにある .vimrc の内容をファイルの先頭に追記し、 dein のパスを書き換える。以下の箇所。
 ```
 "dein Scripts-----------------------------
-〜省略〜
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/star-yamamoto-373150/.cache/dein')
+  call dein#begin('/Users/star-yamamoto-373150/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+   call dein#add('/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim')
+〜以下、省略〜
 "End dein Scripts-------------------------
 ```
 
