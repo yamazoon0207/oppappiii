@@ -1,4 +1,67 @@
-" fuyou-default-plugin無効化" fuyou-default-plugin
+" # dein ###########################################
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
+
+" Set Dein base path (required)
+let s:dein_base = '/Users/star-yamamoto-373150/.cache/dein'
+
+" Set Dein source path (required)
+let s:dein_src = '/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+" Set Dein runtime path (required)
+execute 'set runtimepath+=' . s:dein_src
+
+" Call Dein initialization (required)
+call dein#begin(s:dein_base)
+
+call dein#add(s:dein_src)
+
+" Your plugins go here:
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+" ファイラー (vimfiler が unite に依存)
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimfiler.vim')
+" カラースキーム
+call dein#add('cocopon/iceberg.vim')
+" Markdown プレビュー
+call dein#add('kannokanno/previm')
+" cs"' で " の囲みを ' に変える (Change Surround)
+call dein#add('terryma/vim-expand-region')
+" ビジュアルモードで + を押すと範囲拡大。_ を押すと縮小。
+call dein#add('tpope/vim-surround')
+
+" Finish Dein initialization (required)
+call dein#end()
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+if has('filetype')
+  filetype indent plugin on
+endif
+
+" Enable syntax highlighting
+if has('syntax')
+  syntax on
+endif
+
+" Uncomment if you want to install not-installed plugins on startup.
+"if dein#check_install()
+" call dein#install()
+"endif
+" # dein end ###################################
+
+" Leaderキー
+let g:mapleader = "\<Space>"
+
+" ファイラーを開く
+nnoremap <Leader>i :VimFilerBufferDir<CR>
+vnoremap <Leader>i :VimFilerBufferDir<CR>
+
+
+" 不要なデフォルトプラグインの無効化
 let g:loaded_gzip              = 1
 let g:loaded_tar               = 1
 let g:loaded_tarPlugin         = 1
@@ -15,7 +78,7 @@ let g:loaded_netrwPlugin       = 1
 let g:loaded_netrwSettings     = 1
 let g:loaded_netrwFileHandlers = 1
 
-" kunren
+" 矢印キーの実質無効化
 nnoremap <Up> '
 nnoremap <Down> '
 vnoremap <Up> '
@@ -29,74 +92,78 @@ inoremap <Down> <Nop>
 inoremap <left> <Nop>
 inoremap <right> <Nop>
 
-"半角文字の設定
+"半角文字のフォント設定
 set guifont=Osaka-Mono:h32
 
-"全角文字の設定
+"全角文字のフォント設定
 set guifontwide=Osaka-Mono:h32
 
-
-" hidden 未保存時にもバッファを切り替える
+" 保存されていないファイルがあるときでも別のファイルを開くことが出来る
 set hidden
 
-" esc遠いからjjに
+" esc キーは遠いため、jjに変更
 inoremap <silent> jj <ESC>
 
-":h ex-cmd-index でコマンドのヘルプ出せるよ(メモ)
+":h ex-cmd-index でコマンドのヘルプ出せるよ(超参考)
 
-" command-refできるように
+" コマンドモードで前に打ったコマンドを矢印キーで参照する
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" ctrl-a のときに10進数扱いにする(8進数になるため)
+" 数のインクリメント・デクリメント のときに10進数扱いにする(8進数になるため)
 set nrformats=
 
-set imdisable "Esc押下時に英数入力に変更する
+" Esc 押下時に英数入力に変更する
+set imdisable
 
-set fileencoding=utf-8 " 保存時の文字コード
+" 保存時の文字コード
+set fileencoding=utf-8
 
-set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
+" 読み込み時の文字コードの自動判別. 左側が優先される
+set fileencodings=ucs-boms,utf-8,euc-jp,cp932
 
-set fileformats=unix,dos,mac " 改行コードの自動判別. 左側が優先される
+" 改行コードの自動判別. 左側が優先される
+set fileformats=unix,dos,mac
 
+" □や○文字が崩れる問題を解決
 set ambiwidth=double " □や○文字が崩れる問題を解決
 
-" tab -> space
+" タブをスペース 4つにする。
 set shiftwidth=4
 set softtabstop=4 expandtab
 
-set list " 不可視文字を表示する
-set listchars=tab:>_,trail:_  " タブを >--- 半スペを . で表示する
-"set listchars+=space:\|
+" 不可視文字を表示する
+set list " タブを >--- 半スペを _ で表示する
+set listchars=tab:>_,trail:_
 
-" no indent
+" 自動インデントの無効化
 set noautoindent
 set nosmartindent
 
-" increment search
+" インクリメンタルサーチの有効化 "/abc" と打っている時に "/a" と打った時点で検索開始する
 set incsearch
 
-" kensakukekka-mannnaka
+" 検索結果を真ん中に表示する
 nnoremap n nzz
 nnoremap N Nzz
 
-" kensakukekka-highlight
+" 検索結果をハイライトする
 set hlsearch
 
-" ignorecase
+" 大文字小文字を区別しない
 set ignorecase
 
-" describe number
+" 行数を表示する
 set number
 
-" clipboard
+" コピー&ペーストの結果をクリップボードに入れる
 set clipboard+=unnamed
-"set clipboard=unnamed,autoselect "autoselectを入れるとvisualモードで選択したテキストをクリップボードに入れるため削除
-"set clipboard=unnamed
 
-" mouse マウス禁止
-"set ttymouse=xterm2
+" マウスの有効化
 set mouse=a
+
+" カラースキームの設定
+colorscheme iceberg
 
 "背景透過
 highlight Normal ctermbg=none
@@ -115,42 +182,13 @@ augroup TransparentBG
         autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
 augroup END
 
-" color
-colorscheme iceberg
-" colorscheme hybrid
-syntax on
-
-"set background=dark
-"set background=light
-"colorscheme solarized
-"let g:solarized_termcolors=256
-
-" mark
-nnoremap _ '
-vnoremap _ '
-
-" & map &&
-nnoremap & :&&<CR>
-vnoremap & :&&<CR>
-
-" Statuslineの設定
-set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ \[ENC=%{&fileencoding}]%P
-
-" Leaderキー
-let g:mapleader = "\<Space>"
+" mark機能を忘れずに
 
 " ファイルを閉じる
-"nnoremap <Leader>t :wq!
-"vnoremap <Leader>t :wq!
 nnoremap <Leader>q :q!<CR>
 vnoremap <Leader>q :q!<CR>
 nnoremap <Leader>w :w!<CR>
 vnoremap <Leader>w :w!<CR>
-nnoremap <Leader>] :wq!<CR>
-vnoremap <Leader>] :wq!<CR>
-nnoremap <Leader>e :w 
-vnoremap <Leader>e :w 
 
 " バッファ操作
 nnoremap <silent> [b :bprevious<CR>
@@ -174,25 +212,17 @@ nnoremap <Leader>t :split +enew<CR>
 vnoremap <Leader>t :split +enew<CR>
 
 " ファイル比較
-vnoremap <Leader>: :diffsplit 
-nnoremap <Leader>: :diffsplit 
+vnoremap <Leader>d :diffsplit 
+nnoremap <Leader>d :diffsplit 
 
 " 置換
 nnoremap <Leader>s :%s##
 vnoremap <Leader>s :s##
 
-" ファイルエクスプローラーを開く
-nnoremap <Leader>i :VimFilerBufferDir<CR>
-vnoremap <Leader>i :VimFilerBufferDir<CR>
-
 " バッファ確認し、入力した数字のバッファに移動
 " (移動しない場合はそのままenter)
 nnoremap <Leader>l :ls<CR>:b 
 vnoremap <Leader>l :ls<CR>:b 
-
-" 今のバッファを保存しないで閉じる
-nnoremap <Leader>d :bd!<CR>
-vnoremap <Leader>d :bd!<CR>
 
 " 今のバッファを保存しないで閉じる
 nnoremap <Leader>b :%d<CR>
@@ -206,12 +236,12 @@ nnoremap <Leader>a v$ho0y
 vnoremap <Leader>a $ho0y
 
 " 今カーソルのある場所から一番うしろまでコピー
-nnoremap <Leader>e v$hoy
-vnoremap <Leader>e $hoy
+nnoremap <Leader>9 v$hoy
+vnoremap <Leader>9 $hoy
 
-" ヤンクレジスタから貼り付け
-nnoremap <Leader>p "0p
-vnoremap <Leader>p "0p
+" 今カーソルのある場所から一番前までコピー
+nnoremap <Leader>0 v0y
+vnoremap <Leader>0 0y
 
 " バッファの場所に移動
 nnoremap <Leader>c :cd %:h\|pwd<CR>
@@ -224,14 +254,20 @@ vnoremap <Leader>n :noh<CR>
 " 現在行に書いたコマンドの実行結果を持ってくる
 vnoremap <Leader><CR> :!sh<CR>
 nnoremap <Leader><CR> V:!sh<CR>
-vnoremap <Leader>p<CR> :!pwsh -nol<CR>
-nnoremap <Leader>p<CR> V:!pwsh -nol<CR>
 
 " date 出力
 noremap <Leader>@ :.!date<CR>:normal o<CR>
 
 " calender 出力
 noremap <Leader>\ :.!cal -h<CR>:normal O<CR>
+
+" 現在のバッファ内容をコピー
+nnoremap <Leader>y :%y<CR>
+vnoremap <Leader>y :%y<CR>
+
+" 上に一行空ける
+nnoremap <Leader>o O<ESC>
+vnoremap <Leader>o O<ESC>
 
 " vimgrep
 autocmd QuickFixCmdPost *grep* cwindow
@@ -246,19 +282,9 @@ nnoremap <Leader>k :cclose<CR>
 nnoremap <Leader>h :cnext<CR>
 nnoremap <Leader>l :cprev<CR>
 
-" 現在のバッファ内容をコピー
-nnoremap <Leader>y :%y<CR>
-vnoremap <Leader>y :%y<CR>
-
-" 上に一行空ける
-nnoremap <Leader>o O<ESC>
-vnoremap <Leader>o O<ESC>
-
-"
-" kensaku kensuu count
+" <LEADER>/ で検索した時に / の検索に加えて、件数がわかる
 nnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
 vnoremap <expr> <Leader>/ _(":%s/<Cursor>/&/gn")
-
 function! s:move_cursor_pos_mapping(str, ...)
     let left = get(a:, 1, "<Left>")
     let lefts = join(map(split(matchstr(a:str, '.*<Cursor>\zs.*\ze'), '.\zs'), 'left'), "")
@@ -268,9 +294,6 @@ endfunction
 function! _(str)
     return s:move_cursor_pos_mapping(a:str, "\<Left>")
 endfunction
-
-
-
 
 " Qargs
 " https://github.com/nelstrom/vim-qargs/blob/master/plugin/qargs.vim
@@ -289,11 +312,9 @@ function! QuickfixFilenames()
 endfunction
 
 
-
-
+" "*" を押すと、カーソル上にある単語をハイライトする。
 " bronson/vim-visual-star-search
 " From http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
-
 " makes * and # work on visual mode too.  global function so user mappings can call it.
 " specifying 'raw' for the second argument prevents escaping the result for vimgrep
 " TODO: there's a bug with raw mode.  since we're using @/ to return an unescaped
@@ -309,11 +330,9 @@ endfunction
    let @/ = substitute(@/, '\~', '\\~', 'g')
    let @" = temp
  endfunction
- 
  " replace vim's built-in visual * and # behavior
  xnoremap * :<C-u>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
  xnoremap # :<C-u>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
- 
  " recursively vimgrep for word under cursor or selection
  if maparg('<leader>*', 'n') == ''
    nnoremap <leader>* :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
@@ -321,96 +340,4 @@ endfunction
  if maparg('<leader>*', 'v') == ''
    vnoremap <leader>* :<C-u>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
  endif
-
-
 nn gc :call cursor(0,strlen(getline("."))/2)<CR>
-
-
-" Ward off unexpected things that your distro might have made, as
-" well as sanely reset options when re-sourcing .vimrc
-set nocompatible
-
-" Set Dein base path (required)
-let s:dein_base = '/Users/star-yamamoto-373150/.cache/dein'
-
-" Set Dein source path (required)
-let s:dein_src = '/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim'
-
-" Set Dein runtime path (required)
-execute 'set runtimepath+=' . s:dein_src
-
-" Call Dein initialization (required)
-call dein#begin(s:dein_base)
-
-call dein#add(s:dein_src)
-
-" Your plugins go here:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
-
-" Finish Dein initialization (required)
-call dein#end()
-
-" Attempt to determine the type of a file based on its name and possibly its
-" contents. Use this to allow intelligent auto-indenting for each filetype,
-" and for plugins that are filetype specific.
-if has('filetype')
-  filetype indent plugin on
-endif
-
-" Enable syntax highlighting
-if has('syntax')
-  syntax on
-endif
-
-" Uncomment if you want to install not-installed plugins on startup.
-"if dein#check_install()
-" call dein#install()
-"endif
-
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/Users/star-yamamoto-373150/.cache/dein')
-  call dein#begin('/Users/star-yamamoto-373150/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-   call dein#add('/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
-   call dein#add('Shougo/unite.vim')
-   call dein#add('Shougo/vimfiler')
-   "call dein#add('Yggdroot/indentLine')
-   call dein#add('cocopon/iceberg.vim')
-   "call dein#add('kannokanno/previm')
-   call dein#add('terryma/vim-expand-region')
-   call dein#add('tpope/vim-surround')
-   " https://myenigma.hatenablog.com/entry/2016/07/10/084048
-   call dein#add('tpope/vim-fugitive')
-   call dein#add('leafgarland/typescript-vim')
-   call dein#add('ctrlpvim/ctrlp.vim')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-" filetype plugin indent on
-syntax on
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-"End dein Scripts-------------------------
