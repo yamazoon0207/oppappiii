@@ -108,7 +108,7 @@ Copilot.vim は、コードの自動保管機能である 「Github Copilot」 �
 https://docs.github.com/ja/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-personal-account
 
 上のリンクの手順に従って操作すると、開始ボタンがあります。  
-<img width="1304" alt="スクリーンショット 2023-04-16 3 31 50" src="https://user-images.githubusercontent.com/44886160/232248004-f30c5c1a-8159-456c-8990-771aa91dcaad.png">
+<img width="902" alt="スクリーンショット 2023-04-16 4 27 34" src="https://user-images.githubusercontent.com/44886160/232249740-3214a5ee-cef0-484f-ba23-86a9661be970.png">
 
 最初の３０日は無料、その後は 月 10ドルとのこと。（頼む、円高になってくれ・・）  
 <img width="702" alt="スクリーンショット 2023-04-16 3 32 36" src="https://user-images.githubusercontent.com/44886160/232248010-685ddb1f-6b33-4e09-a8c1-20e060976306.png">
