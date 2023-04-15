@@ -295,23 +295,6 @@ function! _(str)
     return s:move_cursor_pos_mapping(a:str, "\<Left>")
 endfunction
 
-" Qargs
-" https://github.com/nelstrom/vim-qargs/blob/master/plugin/qargs.vim
-command! -nargs=0 -bar Qargs execute 'args' QuickfixFilenames()
-function! QuickfixFilenames()
-  " Building a hash ensures we get each buffer only once
-  let buffer_numbers = {}
-  for quickfix_item in getqflist()
-    let bufnr = quickfix_item['bufnr']
-    " Lines without files will appear as bufnr=0
-    if bufnr > 0
-      let buffer_numbers[bufnr] = bufname(bufnr)
-    endif
-  endfor
-  return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
-endfunction
-
-
 " "*" を押すと、カーソル上にある単語をハイライトする。
 " bronson/vim-visual-star-search
 " From http://got-ravings.blogspot.com/2008/07/vim-pr0n-visual-search-mappings.html
