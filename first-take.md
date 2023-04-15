@@ -36,13 +36,12 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 fisher install rafaelrinaldi/pure
 ```
 
-# dein のインストール
+## dein のインストール
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 ```
 
-## ~/.vimrc が上書きされることを確認する
-### イメージ
+### ~/.vimrc が上書きされることを確認する
 
 ```
 " Ward off unexpected things that your distro might have made, as
@@ -85,34 +84,17 @@ endif
 "endif
 ```
 
-## 本リポジトリにある .vimrc の内容をファイルの先頭に追記し、 dein のパスを書き換える。以下の箇所。
-```
-"dein Scripts-----------------------------
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+### 本リポジトリにある .vimrc ファイルの内容をファイルの最後尾に追記する。
 
-" Required:
-set runtimepath+=/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/Users/star-yamamoto-373150/.cache/dein')
-  call dein#begin('/Users/star-yamamoto-373150/.cache/dein')
-
-  " Let dein manage dein
-  " Required:
-   call dein#add('/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim')
-〜以下、省略〜
-"End dein Scripts-------------------------
-```
-
-
-# Clipy のインストール
+## Clipy のインストール
 https://clipy-app.com/
 
 
-# Quickfixlist
-について再確認。（使ってなかった）
+# 備忘
+
+## Qargs
+Qargs はもう古いとのことで、削除した。2023/04
+https://github.com/nelstrom/vim-qargs
+https://qiita.com/tommy6073/items/b4000435b661523ca744
 https://zenn.dev/tmrekk/articles/4380961a754287
 
