@@ -37,7 +37,7 @@ fisher install rafaelrinaldi/pure
 ```
 
 ### brew のパスを通す
-設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/bin」 を追記します。
+fishの設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/bin」 を追記します。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
@@ -169,7 +169,8 @@ https://github.com/vim/vim/blob/master/READMEdir/README_mac.txt
 <img width="1256" alt="スクリーンショット 2023-04-16 1 58 23" src="https://user-images.githubusercontent.com/44886160/232239654-bcf51d20-fc46-45d1-bc5b-e278e87a6cbc.png">
 
 パスを通します。  
-設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin」 を追加します。
+fish の設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin」 を追加します。
+zsh の場合は、.zprofile になります。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
@@ -190,7 +191,7 @@ vim のバージョンが最新になりました。
 
 <img width="628" alt="スクリーンショット 2023-04-16 2 26 59" src="https://user-images.githubusercontent.com/44886160/232243025-20b8fbd8-e710-4349-9f9d-8dd763f8af07.png">
 
-/usr/local/bin にパスが通っているか確認します。  
+インストール先の「/usr/local/bin」 にパスが通っているか確認します。  
 通っていました。  
 <img width="744" alt="スクリーンショット 2023-04-16 2 31 39" src="https://user-images.githubusercontent.com/44886160/232243899-f635f3e9-7498-4ad0-b07d-611528eec472.png">
 
