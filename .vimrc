@@ -1,37 +1,3 @@
-" 端末セットアップ時にすること
-" 見た目と操作性は命
-"
-" capslock(cmd), 画面切替(C-j,k)のキーバインド変更
-"
-" iTerm2をicebergにする
-" https://github.com/Arc0re/Iceberg-iTerm2
-" やっぱり hybridにする
-" git clone https://github.com/w0ng/vim-hybrid
-" cp -p ./vim-hybrid/colors/hybrid.vim  ~/.vim/colors
-"
-" シェルをzshにする
-" chsh -s /bin/zsh
-" brew update
-" brew install zsh
-
-" Prezto入れる
-" https://github.com/sorin-ionescu/prezto
-" zstyle ':prezto:module:prompt' theme 'pure' # ここを変更
-
-" vimrcを入れる
-" https://github.com/yamazoon/dotfiles
-
-" dein入れる(vimfiler....etc)
-" https://github.com/Shougo/dein.vim
-
-" DASH(スニペット)
-" https://kapeli.com/dash
-"
-" clipy(クリップボード管理)
-" https://clipy-app.com/
-" 
-" Chrome(Vimnium),Typora,marp,showkeys,Licecap...etc
-
 " fuyou-default-plugin無効化" fuyou-default-plugin
 let g:loaded_gzip              = 1
 let g:loaded_tar               = 1
@@ -150,8 +116,8 @@ augroup TransparentBG
 augroup END
 
 " color
-" colorscheme iceberg
-colorscheme hybrid
+colorscheme iceberg
+" colorscheme hybrid
 syntax on
 
 "set background=dark
@@ -360,78 +326,47 @@ endfunction
 nn gc :call cursor(0,strlen(getline("."))/2)<CR>
 
 
-" プラグイン
+" Ward off unexpected things that your distro might have made, as
+" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" NeoBundle
-"" Note: Skip initialization for vim-tiny or vim-small.
-" if 0 | endif
-"
-" if &compatible
-"   set nocompatible               " Be iMproved
-" endif
-"
-" " Required:
-" set runtimepath+=~/.vim/bundle/neobundle.vim/
-"
-" " Required:
-" call neobundle#begin(expand('~/.vim/bundle/'))
-"
-" " Let NeoBundle manage NeoBundle
-" " Required:
-" NeoBundleFetch 'Shougo/neobundle.vim'
-"
-" " My Bundles here:
-" " Refer to |:NeoBundle-examples|.
-" " Note: You don't set neobundle setting in .gvimrc!
-"
-" " NERDTree
-" " NeoBundle 'scrooloose/nerdtree'
-"
-" " indent
-" NeoBundle 'Yggdroot/indentLine'
-"
-" " expand v
-" NeoBundle 'terryma/vim-expand-region'
-"
-" "comment
-" " NeoBundle 'tpope/vim-commentary'
-"
-" "surround.vim
-" NeoBundle 'tpope/vim-surround'
-"
-" " project
-" "NeoBundle 'vimplugin/project.vim'
-"
-" " unite.vim
-" NeoBundle 'Shougo/unite.vim'
-"
-" " filer
-" NeoBundle 'Shougo/vimfiler'
-"
-" " preview markdown with vim
-" NeoBundle 'kannokanno/previm'
-"
-" " iceberg
-" NeoBundle 'cocopon/iceberg.vim'
-"
-" call neobundle#end()
-"
-" " Required:
-" filetype plugin indent on
-"
-" " If there are uninstalled bundles found on startup,
-" " this will conveniently prompt you to install them.
-"NeoBundleCheck
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set Dein base path (required)
+let s:dein_base = '/Users/star-yamamoto-373150/.cache/dein'
 
+" Set Dein source path (required)
+let s:dein_src = '/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim'
 
-" NERDTree
-" map <C-n> :NERDTreeToggle<CR>
+" Set Dein runtime path (required)
+execute 'set runtimepath+=' . s:dein_src
 
+" Call Dein initialization (required)
+call dein#begin(s:dein_base)
 
+call dein#add(s:dein_src)
 
+" Your plugins go here:
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+
+" Finish Dein initialization (required)
+call dein#end()
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+if has('filetype')
+  filetype indent plugin on
+endif
+
+" Enable syntax highlighting
+if has('syntax')
+  syntax on
+endif
+
+" Uncomment if you want to install not-installed plugins on startup.
+"if dein#check_install()
+" call dein#install()
+"endif
 
 "dein Scripts-----------------------------
 if &compatible
@@ -439,15 +374,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/tetsuya/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/tetsuya/dotfiles/.vim/dein')
-  call dein#begin('/Users/tetsuya/dotfiles/.vim/dein')
+if dein#load_state('/Users/star-yamamoto-373150/.cache/dein')
+  call dein#begin('/Users/star-yamamoto-373150/.cache/dein')
 
   " Let dein manage dein
   " Required:
-   call dein#add('/Users/tetsuya/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim')
+   call dein#add('/Users/star-yamamoto-373150/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
@@ -455,7 +390,7 @@ if dein#load_state('/Users/tetsuya/dotfiles/.vim/dein')
    call dein#add('Shougo/unite.vim')
    call dein#add('Shougo/vimfiler')
    "call dein#add('Yggdroot/indentLine')
-   "call dein#add('cocopon/iceberg.vim')
+   call dein#add('cocopon/iceberg.vim')
    "call dein#add('kannokanno/previm')
    call dein#add('terryma/vim-expand-region')
    call dein#add('tpope/vim-surround')
@@ -479,23 +414,3 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
-
-" プラグイン関連設定
-
-" expand v
-vmap m <Plug>(expand_region_expand)
-vmap M <Plug>(expand_region_shrink)
-
-" vimfiler safe mode off
-let g:vimfiler_safe_mode_by_default = 0
-
-" previm
-"autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-"let g:previm_open_cmd = 'open -a "Google Chrome"'
-"let g:previm_disable_default_css = 1
-"let g:previm_custom_css_path = '~/dotfiles/.vim/previm/markdown.css'
-"nnoremap <Leader>m :PrevimOpen<CR>
-"vnoremap <Leader>m :PrevimOpen<CR>
-
-
