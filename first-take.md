@@ -111,3 +111,8 @@ if dein#load_state('/Users/star-yamamoto-373150/.cache/dein')
 # Clipy のインストール
 https://clipy-app.com/
 
+
+# Quickfixlist
+について再確認。（使ってなかった）
+https://zenn.dev/tmrekk/articles/4380961a754287
+
