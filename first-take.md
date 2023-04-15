@@ -37,7 +37,7 @@ fisher install rafaelrinaldi/pure
 ```
 
 ### brew のパスを通す
-~/.config/fish/config.fish に fish_add_path /opt/homebrew/bin を追記します。
+「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/bin」 を追記します。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
@@ -150,7 +150,7 @@ https://github.com/vim/vim/blob/master/READMEdir/README_mac.txt
 <img width="1256" alt="スクリーンショット 2023-04-16 1 58 23" src="https://user-images.githubusercontent.com/44886160/232239654-bcf51d20-fc46-45d1-bc5b-e278e87a6cbc.png">
 
 パスを通します。  
-~/.config/fish/config.fish に fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin を追加します。
+「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin」 を追加します。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
@@ -172,7 +172,7 @@ vim のバージョンが最新になりました。
 <img width="628" alt="スクリーンショット 2023-04-16 2 26 59" src="https://user-images.githubusercontent.com/44886160/232243025-20b8fbd8-e710-4349-9f9d-8dd763f8af07.png">
 
 /usr/local/bin にパスが通っているか確認します。  
-もちろん、通っていました。  
+通っていました。  
 <img width="744" alt="スクリーンショット 2023-04-16 2 31 39" src="https://user-images.githubusercontent.com/44886160/232243899-f635f3e9-7498-4ad0-b07d-611528eec472.png">
 
 バージョンを確認しておきます。  
@@ -189,13 +189,13 @@ vim で以下のコマンドを実行します。
 :Copilot setup
 ```
 
-ワンタイムコードが出ますので控えて Enter を押します。
+ワンタイムコードが出ますので控えて Enter を押します。  
 <img width="925" alt="スクリーンショット 2023-04-16 2 39 54" src="https://user-images.githubusercontent.com/44886160/232244833-4295ab9a-87e4-470c-a4d9-438b78e06898.png">
 
-WEBブラウザが開き、 Github との連携を認証する画面が出ます。Authorize〜を押して承認します。
+WEBブラウザが開き、 Github との連携を認証する画面が出ます。Authorize〜を押して承認します。  
 <img width="716" alt="スクリーンショット 2023-04-16 2 38 21" src="https://user-images.githubusercontent.com/44886160/232244873-a3fd3baa-c486-4431-88b2-e31a08d94f7b.png">
 
-連携できました というメッセージが出ます。
+連携できました というメッセージが出ます。  
 <img width="636" alt="スクリーンショット 2023-04-16 2 39 15" src="https://user-images.githubusercontent.com/44886160/232244881-ef69ce38-00eb-4935-98cc-195cac78abed.png">
 
 
