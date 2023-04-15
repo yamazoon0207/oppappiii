@@ -100,6 +100,9 @@ endif
 https://clipy-app.com/
 
 ## 5. Copilot.vim のインストール
+事前にサブスクリプションが必要。  
+https://docs.github.com/ja/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-personal-account
+
 リポジトリ：
 https://github.com/github/copilot.vim
 
