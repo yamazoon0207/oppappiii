@@ -1,5 +1,5 @@
 # セットアップ時にしたこと
-## brew のインストール
+## 1. brew のインストール
 https://zenn.dev/watakarinto/articles/16451707aa08d1
 https://brew.sh
 ```
@@ -7,7 +7,7 @@ https://brew.sh
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ユーザー名/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
-## fish のインストールと設定
+## 2. fish のインストールと設定
 https://medium.com/@kjmczk/mac-terminal-53a3d4ac06c7
 
 ### fish のインストール
@@ -36,7 +36,7 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 fisher install rafaelrinaldi/pure
 ```
 
-## dein のインストール
+## 3. dein のインストール
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 ```
@@ -86,7 +86,7 @@ endif
 
 ### 本リポジトリにある .vimrc ファイルの内容をファイルの最後尾に追記する。
 
-## Clipy のインストール
+## 4. Clipy のインストール
 https://clipy-app.com/
 
 
@@ -94,7 +94,8 @@ https://clipy-app.com/
 
 ## Qargs
 Qargs はもう古いとのことで、削除した。2023/04
-https://github.com/nelstrom/vim-qargs
-https://qiita.com/tommy6073/items/b4000435b661523ca744
-https://zenn.dev/tmrekk/articles/4380961a754287
+
+* https://github.com/nelstrom/vim-qargs
+* https://qiita.com/tommy6073/items/b4000435b661523ca744
+* https://zenn.dev/tmrekk/articles/4380961a754287
 
