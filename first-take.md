@@ -121,7 +121,7 @@ https://docs.github.com/ja/billing/managing-billing-for-github-copilot/managing-
 
 
 
-### Copilot.vim の設定
+### Copilot.vim を設定する手順の概要
 設定手順を Readme より 引用します。：
 1.  Install [Neovim](https://github.com/neovim/neovim/releases/tag/stable) or the latest patch of [Vim](https://github.com/vim/vim) (9.0.0185 or newer).
 
@@ -152,6 +152,7 @@ https://docs.github.com/ja/billing/managing-billing-for-github-copilot/managing-
             $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
 
 ### 最新の vim をインストール
+Copilot.vim を使用するには、vim が 9.0.0185以降である必要があります。  
 まずは 最新の vim をインストールします。
 Mac の場合は brew です。
 
@@ -186,6 +187,7 @@ vim のバージョンが最新になりました。
 <img width="928" alt="スクリーンショット 2023-04-16 2 22 10" src="https://user-images.githubusercontent.com/44886160/232242387-b8835bb0-8d5a-46fa-b425-227e7348bb31.png">
 
 ### Node.js のインストール
+Copilot.vim を使用するには、Node.js が必要です。  
 参考：https://nodejs.org/en/download  
 .pkg 形式のインストーラを使い、インストールできました。  
 
@@ -219,6 +221,20 @@ WEBブラウザが開き、 Github との連携を認証する画面が出ます
 
 連携できました というメッセージが出ます。  
 <img width="636" alt="スクリーンショット 2023-04-16 2 39 15" src="https://user-images.githubusercontent.com/44886160/232244881-ef69ce38-00eb-4935-98cc-195cac78abed.png">
+
+以下のコマンドで状態を確認します。
+
+```
+:Copilot status
+```
+
+利用可能なようです。
+<img width="482" alt="スクリーンショット 2023-04-16 4 02 37" src="https://user-images.githubusercontent.com/44886160/232248691-d8d0f4ac-9712-4a78-b3f7-ad4e0104c1ff.png">
+
+
+![gif](https://user-images.githubusercontent.com/44886160/232249270-78e598c5-5f07-47db-868b-07e03d44b49c.gif)
+
+
 
 
 # 備忘
