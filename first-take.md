@@ -1,37 +1,50 @@
-# brew のインストール
-# https://zenn.dev/watakarinto/articles/16451707aa08d1
-# https://brew.sh
+# セットアップ時にしたこと
+## brew のインストール
+https://zenn.dev/watakarinto/articles/16451707aa08d1
+https://brew.sh
+```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ユーザー名/.zprofile
 eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+## fish のインストールと設定
+https://medium.com/@kjmczk/mac-terminal-53a3d4ac06c7
 
-# fish のインストール
+### fish のインストール
+```
 brew install fish
 which fish
+```
 
-# shells に追加
+### fish を shells に追加
+```
 sudo vi /etc/shells
+```
 
-# デフォルトシェルに変更
+### fish を デフォルトシェルに変更
+```
 which fish |xargs chsh -s
+```
 
-# fisher のインストール
+### fisher のインストール
+```
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+```
 
-# pure を入れる
+### pure を入れる
+```
 fisher install rafaelrinaldi/pure
-
-# 参考：https://medium.com/@kjmczk/mac-terminal-53a3d4ac06c7
-
-
-
+```
 
 # dein のインストール
+```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
+```
 
-# ~/.vimrc が上書きされるので、内容を控える
-# イメージ
+## ~/.vimrc が上書きされることを確認する
+### イメージ
 
+```
 " Ward off unexpected things that your distro might have made, as
 " well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -70,5 +83,13 @@ endif
 "if dein#check_install()
 " call dein#install()
 "endif
+```
+
+## 本リポジトリにある .vimrc の内容をファイルの先頭に追記し、 dein のパスを書き換える。以下の箇所。
+```
+"dein Scripts-----------------------------
+〜省略〜
+"End dein Scripts-------------------------
+```
 
 
