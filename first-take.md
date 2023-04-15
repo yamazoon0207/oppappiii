@@ -151,8 +151,8 @@ https://docs.github.com/ja/billing/managing-billing-for-github-copilot/managing-
           git clone https://github.com/github/copilot.vim.git `
             $HOME/AppData/Local/nvim/pack/github/start/copilot.vim
 
-### vim のアップデート
-まずは vim をアップデートします。
+### 最新の vim をインストール
+まずは 最新の vim をインストールします。
 Mac の場合は brew です。
 
 ```
