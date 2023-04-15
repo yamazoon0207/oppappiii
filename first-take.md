@@ -37,7 +37,7 @@ fisher install rafaelrinaldi/pure
 ```
 
 ### brew のパスを通す
-「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/bin」 を追記します。
+設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/bin」 を追記します。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
@@ -150,7 +150,7 @@ https://github.com/vim/vim/blob/master/READMEdir/README_mac.txt
 <img width="1256" alt="スクリーンショット 2023-04-16 1 58 23" src="https://user-images.githubusercontent.com/44886160/232239654-bcf51d20-fc46-45d1-bc5b-e278e87a6cbc.png">
 
 パスを通します。  
-「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin」 を追加します。
+設定ファイル「~/.config/fish/config.fish」 に 「fish_add_path /opt/homebrew/Cellar/vim/9.0.1450/bin」 を追加します。
 
 ```fish:~/.config/fish/config.fish
 if status is-interactive
